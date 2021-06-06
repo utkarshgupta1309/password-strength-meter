@@ -1,0 +1,139 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto&display=swap");
+
+*::after,
+*::before,
+* {
+  box-sizing: border-box;
+}
+
+:root {
+  --color-background: #1d2d50;
+  --color-primary: #dab692fb;
+  --color-secondary: #1e5f74;
+  --color-border: #133b5c;
+  --font: "Roboto";
+}
+
+body {
+  font-family: var(--font);
+  background: var(--color-background);
+  background-image: linear-gradient(#1e5f74, #1d2d50);
+  color: var(--color-primary);
+  display: block;
+  position: relative;
+  height: 100vh;
+  text-align: center;
+}
+body h1 {
+  text-transform: uppercase;
+}
+
+.vertically-centered {
+  margin: 0;
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+.meter {
+  position: relative;
+  width: 30rem;
+  height: 2rem;
+  border: 3px solid var(--color-secondary);
+  border-radius: 1rem;
+  margin: 0 auto;
+  overflow: hidden;
+}
+
+.meter::before {
+  content: "";
+  height: 100%;
+  position: absolute;
+  left: 0;
+  background-color: var(--color-primary);
+  border-radius: 1rem;
+  width: calc(1% * var(--strength, 0));
+  transition: width 200ms;
+}
+
+#password-input {
+  background-color: var(--color-border);
+  margin: 0 auto;
+  margin-top: 2rem;
+  width: 25rem;
+  padding: 0.3rem;
+  color: var(--color-primary);
+  border: 2px solid var(--color-secondary);
+  border-radius: 0.2rem;
+  outline: none;
+}
+#password-input:focus {
+  border-color: var(--color-primary);
+  background-color: var(--color-secondary);
+}
+#password-input::placeholder {
+  color: #c0a488fb;
+}
+
+.rand-generator {
+  margin: 1rem;
+}
+.rand-generator button {
+  background-color: var(--color-secondary);
+  border: 2px solid var(--color-primary);
+  color: var(--color-primary);
+  width: 10rem;
+  padding: 0.2rem;
+  cursor: pointer;
+}
+.suggestions {
+  border: 1px solid rgba(255, 255, 255, 0.671);
+  padding: 0.5rem;
+  margin: 1rem;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.2rem;
+  font-size: 0.9rem;
+}
+.suggestions > * {
+  margin-top: 0.5rem;
+  color: #c0a488fb;
+  text-transform: capitalize;
+}
+
+footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100px;
+}
+footer div {
+  padding: 0.2rem;
+}
+footer div a {
+  color: #c0a488fb;
+  font-style: italic;
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 0.5rem;
+  }
+  .meter {
+    width: 20rem;
+  }
+  #password-input {
+    width: 17rem;
+  }
+  .suggestions {
+    font-size: 0.6rem;
+  }
+  footer {
+    font-size: 0.6rem;
+  }
+}

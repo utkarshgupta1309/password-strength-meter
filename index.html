@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style-modern.css" />
+    <title>Password Strength Meter</title>
+  </head>
+  <body>
+    <div class="vertically-centered">
+      <img src="logo.png" id="logo" alt="logo" width="100px" />
+      <h1>Password Strength Meter</h1>
+      <div class="meter" id="password-meter"></div>
+      <div class="meter-input">
+        <input
+          type="text"
+          name="password"
+          placeholder="Enter your password here"
+          autofocus
+          aria-labelledby="password"
+          id="password-input"
+        />
+      </div>
+      <div class="rand-generator">
+        <button type="button" id="rand-generator-button">
+          Generate Random
+        </button>
+      </div>
+      <div class="suggestions" id="suggestions">
+        <div><i>Start by typing a password</i></div>
+      </div>
+    </div>
+    <footer>
+      <div>
+        Designed By
+        <a href="http://www.https://utkarsh-gupta.herokuapp.com/">Utkarsh</a>
+      </div>
+      <div>
+        <a
+          href="https://github.com/utkarshgupta1309/password-strength-meter"
+          target="_blank"
+          >Wanna look at the code?</a
+        >
+      </div>
+    </footer>
+  </body>
+
+  <script type="text/javascript" src="./script.js"></script>
+</html>
